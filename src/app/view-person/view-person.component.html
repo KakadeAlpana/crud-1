@@ -1,0 +1,19 @@
+
+<div class="card" *ngIf="viewSinglePerson">
+    <div class="card-header card-title text-center">
+      <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle avtar" style="width: 150px;"
+      alt="Avatar" />
+      </div>
+    <div class="card-body">
+        <p class="card-text"> Name :- {{viewSinglePerson.firstName}} {{viewSinglePerson.lastName}} </p>
+        <p class="card-text">Email :- {{viewSinglePerson.email}}</p>
+        <p class="card-text">Mobile no. :- {{viewSinglePerson.mobile}}</p>
+        <p class="card-text">Age :- {{viewSinglePerson.age}}</p>
+
+    </div>
+    <div class="card-footer d-flex  justify-content-between">
+      <a href="#" class="btn btn-primary btn-sm" [routerLink]="['/editperson',viewSinglePerson.id]">Edit</a>
+      <a href="#" class="btn btn-danger" (click)="onDelete(viewSinglePerson.id)">Delete</a>
+    </div>
+
+</div>

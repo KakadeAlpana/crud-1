@@ -1,0 +1,38 @@
+<div class="table-responsive">
+
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Sr No.</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Age</th>
+                <th>Edit</th>
+                <th>View</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let useritem of allPersonData;index as i">
+                <td>{{i + 1}}</td>
+                <td>{{useritem.firstName}}</td>
+                <td>{{useritem.lastName}}</td>
+                <td>{{useritem.email}}</td>
+                <td>{{useritem.mobile}}</td>
+                <td>{{useritem.age}}</td>
+                <!-- <td><button type="button" class="btn btn-primary btn-sm" [routerLink]="['editperson', useritem.id, 'edit']">Edit</button></td> -->
+               
+                <td><button type="button" class="btn btn-primary btn-sm"  (click)="onEdit(useritem.id)">Edit</button></td>
+
+                <td><button type="button" class="btn btn-success btn-sm" [routerLink]="['viewperson', useritem.id]">View</button></td>
+                
+                <td><button type="button" class="btn btn-danger btn-sm"  (click)="onDelete(useritem.id)">Delete</button></td>
+
+                
+            </tr>
+            
+        </tbody>
+    </table>
+</div>

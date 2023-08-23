@@ -1,0 +1,57 @@
+
+
+<div class="card">
+    <div class="card-header">
+        <h3 *ngIf="!postId">Create Person Data</h3>
+        <h3 *ngIf="postId">Update Person Data</h3>
+    </div>
+    <div class="card-body">
+
+        <!-- <form [formGroup]="personDataForm" (ngSubmit)="onCreatePersonData()"> -->
+        <form [formGroup]="personDataForm" (ngSubmit)="onCreatePersonData()">
+            <div class="form-group">
+                <label for="firstName">First Name*</label>
+                <input type="text" formControlName="firstName" id="firstName" class="form-control">
+                <ng-container *ngIf="f['firstName'].invalid && f['firstName'].touched">
+                <p class="text-danger" >First Name is Mandetory.</p>
+            </ng-container>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name*</label>
+                <input type="text" formControlName="lastName" id="lastName" class="form-control">
+                <ng-container *ngIf="f['lastName'].invalid && f['lastName'].touched">
+                <P class="text-danger">Last Name is Mandetory</P>
+                </ng-container>
+            </div>
+            <div class="form-group">
+                <label for="email">Email*</label>
+                <input type="text" formControlName="email" id="email" class="form-control">
+                <ng-container *ngIf="f['email'].invalid && f['email'].touched">
+                    <P class="text-danger">Email is Mandetory</P>
+                </ng-container>
+            </div>
+            <div class="form-group">
+                <label for="mobileno">Mobile No.*</label>
+                <input type="text" formControlName="mobile" id="mobile" class="form-control">
+                <ng-container *ngIf="f['mobile'].invalid && f['mobile'].touched">
+                    <P class="text-danger">Mobile no. is Mandetory</P>
+                </ng-container>
+            </div>
+            <div class="form-group">
+                <label for="age">Age*</label>
+                <input type="text" formControlName="age" id="age" class="form-control">
+                <ng-container *ngIf="f['age'].invalid && f['age'].touched">
+                    <P class="text-danger">Age is Mandetory</P>
+                </ng-container>
+            </div>
+            <div class="card-footer">
+                <div class="text-right">
+                    <!-- <button class="btn btn-info btn-sm" type="submit" [disabled]="personDataForm.invalid" *ngIf="!postId">Create</button> -->
+                    <!-- <button class="btn btn-info btn-sm" type="submit" >Create</button> -->
+                    <button type="submit">createnew</button>
+                    <button class="btn btn-primary btn-sm" type="button" *ngIf="postId" (click)="onUpdateData()">Update</button>
+                </div>
+            </div>
+</form>
+
+</div>

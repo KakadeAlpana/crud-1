@@ -1,0 +1,31 @@
+.form-control {
+    height: calc(1.5em + .75rem ) !important;
+    padding: -3.625rem .75rem;
+    font-size: 12px;
+}
+.form-group{
+    margin-bottom: 5px !important;
+}
+label {
+    margin-bottom: 0 !important;
+}
+.card-footer,.card-header{
+padding: 5px !important;
+}
+.card{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
+}
+.card-header h3{
+    font-size: 16px;
+    color: #000045 !important;
+}
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+    font-size: 13px !important;
+    font-weight: 700;
+    width: 25%;
+}
+.text-danger {
+    color: #dc3545!important;
+    font-size: 10px;
+}
